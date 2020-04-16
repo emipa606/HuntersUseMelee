@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Hunters Use Melee!</name>
+  <author>Netrve</author>
+  <supportedVersions>
+    <li>1.1</li>
+  </supportedVersions>
+  <packageId>netrve.usemelee</packageId>
+  <description>Allows hunters to make use of melee weapons to do their job.</description>
+</ModMetaData>
