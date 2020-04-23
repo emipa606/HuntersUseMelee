@@ -20,12 +20,13 @@
         <option value="$PROJECT_DIR$/HuntersUseMelee.sln" />
         <option value="$PROJECT_DIR$/StaticConstructor.cs" />
         <option value="$PROJECT_DIR$/Alert_HuntersUseMelee.cs" />
-        <option value="$PROJECT_DIR$/Properties/AssemblyInfo.cs" />
         <option value="$PROJECT_DIR$/HuntersUseMelee_Settings.cs" />
-        <option value="$PROJECT_DIR$/HuntersUseMelee.csproj" />
         <option value="$PROJECT_DIR$/ModSettings.cs" />
         <option value="$PROJECT_DIR$/../../Languages/English/Keyed/TranslationKeys.xml" />
+        <option value="$PROJECT_DIR$/HuntersUseMelee.csproj" />
         <option value="$PROJECT_DIR$/HuntersUseMelee.cs" />
+        <option value="$PROJECT_DIR$/Properties/AssemblyInfo.cs" />
+        <option value="$PROJECT_DIR$/../../About/About.xml" />
       </list>
     </option>
   </component>
@@ -80,6 +81,9 @@
       <workItem from="1587583582789" duration="1000" />
       <workItem from="1587603450130" duration="454000" />
       <workItem from="1587640667418" duration="784000" />
+      <workItem from="1587665361978" duration="806000" />
+      <workItem from="1587669168644" duration="2744000" />
+      <workItem from="1587672312505" duration="599000" />
     </task>
     <servers />
   </component>

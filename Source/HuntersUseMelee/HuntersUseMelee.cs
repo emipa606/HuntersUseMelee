@@ -2,8 +2,9 @@
 // If a copy of the MPL was not distributed with this file,
 // You can obtain one at https://mozilla.org/MPL/2.0/
 
+using System;
 using System.Linq;
-using SimpleSidearms;
+using System.Reflection;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -13,19 +14,7 @@ namespace HuntersUseMelee
     [StaticConstructorOnStartup]
     public static class HuntersUseMeleeMain
     {
-        public static readonly bool SimpleSidearmsLoaded;
-
-        // Constructor just used to see if Simple Sidearms is loaded
-        static HuntersUseMeleeMain()
-        {
-            SimpleSidearmsLoaded = IsLoaded("PeteTimesSix.SimpleSidearms");
-        }
-
-        // Utility function to check if a mod is loaded based on its packageId
-        private static bool IsLoaded(string packageId)
-        {
-            return LoadedModManager.RunningModsListForReading.Any(x => x.PackageId == packageId);
-        }
+        public static bool SimpleSidearmsLoaded =>  ModsConfig.ActiveModsInLoadOrder.Any(m => m.Name == "Simple sidearms" || m.PackageId == "petetimessix.simplesidearms");
     }
 
     [StaticConstructorOnStartup]
@@ -55,19 +44,24 @@ namespace HuntersUseMelee
                     __result = true;
                     return;
                 }
-                
+
                 // Check if primary is a valid, damaging melee weapon
                 // Automatically assign the result
                 __result = p.equipment.Primary != null && p.equipment.Primary.def.IsMeleeWeapon &&
                            p.equipment.PrimaryEq.PrimaryVerb.HarmsHealth();
 
+
                 // Simple Sidearms support
-                // As above, we skip if result is already true, but we also skip is setting is off
+                // As above, we skip if result is already true, but we also skip if setting is off
                 // Or Simple Sidearms isn't loaded
-                if (__result || !(HuntersUseMeleeMain.SimpleSidearmsLoaded && HuntersUseMeleeMod.settings.enableSimpleSidearms)) return;
-                
+                if (__result || !HuntersUseMeleeMod.settings.enableSimpleSidearms || !HuntersUseMeleeMain.SimpleSidearmsLoaded) return;
+
                 // If the pawn can carry sidearms and has any, they are good to go
-                if (p.getCarriedWeapons().Any())
+                var simpleExtensions = AccessTools.TypeByName("SimpleSidearms.Extensions");
+                var getGuns = simpleExtensions.GetMethod("getCarriedWeapons");
+
+                // p.getCarriedWeapons().Any()
+                if (getGuns != null && getGuns.Invoke(null, new object[] { p, true, false }) != null)
                     __result = true;
             }
 

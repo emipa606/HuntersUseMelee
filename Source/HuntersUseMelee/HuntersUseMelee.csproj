@@ -36,13 +36,11 @@
   <ItemGroup>
     <Reference Include="0Harmony, Version=2.0.0.9, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\..\References\0Harmony.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="SimpleSidearms, Version=1.4.5.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\927155256\v1.1\Assemblies\SimpleSidearms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

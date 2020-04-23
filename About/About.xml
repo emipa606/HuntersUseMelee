@@ -6,8 +6,9 @@
     <li>1.1</li>
   </supportedVersions>
   <packageId>netrve.usemelee</packageId>
-  <description>Allows hunters to make use of melee weapons to do their job. (Installed version: v1.1.0)</description>
+  <description>Allows hunters to make use of melee weapons to do their job. (Installed version: v1.1.1)</description>
   	<loadAfter>
+		<li>brrainz.harmony</li>
 		<li>ludeon.rimWorld</li>
 		<li>ludeon.rimWorld.royalty</li>
 		<li>petetimessix.simplesidearms</li>
