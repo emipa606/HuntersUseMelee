@@ -34,7 +34,7 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.0.0.9, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="0Harmony, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\..\References\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>

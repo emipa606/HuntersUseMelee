@@ -14,12 +14,15 @@ namespace HuntersUseMelee
     [StaticConstructorOnStartup]
     public static class HuntersUseMeleeMain
     {
-        public static bool SimpleSidearmsLoaded =>  ModsConfig.ActiveModsInLoadOrder.Any(m => m.Name == "Simple sidearms" || m.PackageId == "petetimessix.simplesidearms");
+        public static bool SimpleSidearmsLoaded => ModsConfig.ActiveModsInLoadOrder.Any(m => m.Name == "Simple sidearms" || m.PackageId == "petetimessix.simplesidearms");
     }
 
     [StaticConstructorOnStartup]
     static class HarmonyPatches
     {
+        private static Type simpleExtensions => AccessTools.TypeByName("SimpleSidearms.Extensions");
+        private static MethodInfo getGuns => simpleExtensions.GetMethod("getCarriedWeapons");
+        
         static HarmonyPatches()
         {
             var harmony = new Harmony("net.netrve.huntersusemelee");
@@ -33,35 +36,34 @@ namespace HuntersUseMelee
         [HarmonyPatch(typeof(WorkGiver_HunterHunt), "HasHuntingWeapon")]
         internal static class Patch_HasHuntingWeapon
         {
+            static bool Prefix(ref bool __result)
+            {
+                // If Fist Fighting is disabled, we continue normally
+                if (!HuntersUseMeleeMod.settings.enableFistFighting) return true;
+                
+                // If Fist Fighting is enabled, we return true and skip the rest of the original function
+                __result = true;
+                return false;
+            }
+            
             static void Postfix(Pawn p, ref bool __result)
             {
                 // No need to run if the result already is true
                 if (__result) return;
-
-                // If Fist Fighting is enabled, anything goes so we return true
-                if (HuntersUseMeleeMod.settings.enableFistFighting)
-                {
-                    __result = true;
-                    return;
-                }
 
                 // Check if primary is a valid, damaging melee weapon
                 // Automatically assign the result
                 __result = p.equipment.Primary != null && p.equipment.Primary.def.IsMeleeWeapon &&
                            p.equipment.PrimaryEq.PrimaryVerb.HarmsHealth();
 
-
                 // Simple Sidearms support
                 // As above, we skip if result is already true, but we also skip if setting is off
                 // Or Simple Sidearms isn't loaded
-                if (__result || !HuntersUseMeleeMod.settings.enableSimpleSidearms || !HuntersUseMeleeMain.SimpleSidearmsLoaded) return;
+                if (__result || !HuntersUseMeleeMod.settings.enableSimpleSidearms || !HuntersUseMeleeMain.SimpleSidearmsLoaded || getGuns == null) return;
 
                 // If the pawn can carry sidearms and has any, they are good to go
-                var simpleExtensions = AccessTools.TypeByName("SimpleSidearms.Extensions");
-                var getGuns = simpleExtensions.GetMethod("getCarriedWeapons");
-
                 // p.getCarriedWeapons().Any()
-                if (getGuns != null && getGuns.Invoke(null, new object[] { p, true, false }) != null)
+                if (getGuns.Invoke(null, new object[] {p, true, false}) != null)
                     __result = true;
             }
 
