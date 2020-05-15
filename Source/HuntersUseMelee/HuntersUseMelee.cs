@@ -25,8 +25,15 @@ namespace HuntersUseMelee
         {
             var harmony = new Harmony("net.netrve.huntersusemelee");
             
-            var simpleExtensions = AccessTools.TypeByName("SimpleSidearms.Extensions");
-            getGuns = simpleExtensions.GetMethod("getCarriedWeapons");
+            try 
+            {
+                var simpleExtensions = AccessTools.TypeByName("SimpleSidearms.Extensions");
+                getGuns = simpleExtensions.GetMethod("getCarriedWeapons");
+            }
+            catch
+            {
+                Log.Warning("[HuM] Could not find Simple Sidearms, support disabled.");
+            }
 
             // We patch all as we use annotations
             harmony.PatchAll();
