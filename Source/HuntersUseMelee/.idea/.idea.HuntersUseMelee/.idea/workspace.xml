@@ -11,6 +11,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/36108D57-F84D-49CA-BDAE-818C2A53FC38/6b/df0f3683/Listing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1C67EEDB-AD52-40CA-8138-9937339DFC77/62/c07cc937/Extensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1C71D37A-EDAD-48A0-BF01-39AD873717E1/31/507ed9fb/AccessTools.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ModSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HuntersUseMelee.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -24,9 +25,9 @@
         <option value="$PROJECT_DIR$/ModSettings.cs" />
         <option value="$PROJECT_DIR$/../../Languages/English/Keyed/TranslationKeys.xml" />
         <option value="$PROJECT_DIR$/HuntersUseMelee.csproj" />
-        <option value="$PROJECT_DIR$/HuntersUseMelee.cs" />
-        <option value="$PROJECT_DIR$/Properties/AssemblyInfo.cs" />
         <option value="$PROJECT_DIR$/../../About/About.xml" />
+        <option value="$PROJECT_DIR$/Properties/AssemblyInfo.cs" />
+        <option value="$PROJECT_DIR$/HuntersUseMelee.cs" />
       </list>
     </option>
   </component>
@@ -84,6 +85,7 @@
       <workItem from="1587665361978" duration="806000" />
       <workItem from="1587669168644" duration="2744000" />
       <workItem from="1587672312505" duration="599000" />
+      <workItem from="1588723493912" duration="675000" />
     </task>
     <servers />
   </component>
