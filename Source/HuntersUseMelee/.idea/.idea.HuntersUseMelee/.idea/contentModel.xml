@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Netrve\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Netrve\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_HuntersUseMelee.-1425690146.00" t="ExcludeRecursive" />
-    <e p="G:\SteamLibrary\steamapps\common\RimWorld\Mods\HuntersUseMelee!\Assemblies" t="ExcludeRecursive" />
-    <e p="G:\SteamLibrary\steamapps\common\RimWorld\Mods\HuntersUseMelee!\Source\HuntersUseMelee" t="IncludeRecursive">
+    <e p="C:\Users\Netrve\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_HuntersUseMelee.-343720935.00" t="ExcludeRecursive" />
+    <e p="G:\SteamLibrary\steamapps\common\RimWorld\Mods\RW_HuntersUseMelee\.git\info\exclude" t="IncludeRecursive" />
+    <e p="G:\SteamLibrary\steamapps\common\RimWorld\Mods\RW_HuntersUseMelee\Assemblies" t="ExcludeRecursive" />
+    <e p="G:\SteamLibrary\steamapps\common\RimWorld\Mods\RW_HuntersUseMelee\Source\HuntersUseMelee" t="IncludeRecursive">
       <e p="HuntersUseMelee.cs" t="Include" />
       <e p="HuntersUseMelee.csproj" t="IncludeRecursive" />
       <e p="HuntersUseMelee.sln" t="IncludeFlat" />

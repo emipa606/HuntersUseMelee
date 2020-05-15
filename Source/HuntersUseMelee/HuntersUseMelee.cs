@@ -2,7 +2,6 @@
 // If a copy of the MPL was not distributed with this file,
 // You can obtain one at https://mozilla.org/MPL/2.0/
 
-using System;
 using System.Linq;
 using System.Reflection;
 using HarmonyLib;
@@ -20,12 +19,14 @@ namespace HuntersUseMelee
     [StaticConstructorOnStartup]
     static class HarmonyPatches
     {
-        private static Type simpleExtensions => AccessTools.TypeByName("SimpleSidearms.Extensions");
-        private static MethodInfo getGuns => simpleExtensions.GetMethod("getCarriedWeapons");
+        private static MethodInfo getGuns;
         
         static HarmonyPatches()
         {
             var harmony = new Harmony("net.netrve.huntersusemelee");
+            
+            var simpleExtensions = AccessTools.TypeByName("SimpleSidearms.Extensions");
+            getGuns = simpleExtensions.GetMethod("getCarriedWeapons");
 
             // We patch all as we use annotations
             harmony.PatchAll();
@@ -61,6 +62,11 @@ namespace HuntersUseMelee
                 // Or Simple Sidearms isn't loaded
                 if (__result || !HuntersUseMeleeMod.settings.enableSimpleSidearms || !HuntersUseMeleeMain.SimpleSidearmsLoaded || getGuns == null) return;
 
+                // Run this every 60 ticks instead of every tick
+                var gameTick = Find.TickManager.TicksGame;
+                if (gameTick % 60 != 0)
+                    return;
+                
                 // If the pawn can carry sidearms and has any, they are good to go
                 // p.getCarriedWeapons().Any()
                 if (getGuns.Invoke(null, new object[] {p, true, false}) != null)
