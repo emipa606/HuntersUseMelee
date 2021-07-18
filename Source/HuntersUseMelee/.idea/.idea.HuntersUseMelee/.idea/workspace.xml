@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9ec3cb6-906e-4347-8b22-5130dec31296" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../About/About.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../About/About.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assemblies/HuntersUseMelee.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assemblies/HuntersUseMelee.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HuntersUseMelee/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HuntersUseMelee/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HuntersUseMelee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HuntersUseMelee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuntersUseMelee.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HuntersUseMelee.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +32,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/36108D57-F84D-49CA-BDAE-818C2A53FC38/6b/df0f3683/Listing.cs" root0="SKIP_HIGHLIGHTING" />
@@ -112,7 +117,8 @@
       <workItem from="1587672312505" duration="599000" />
       <workItem from="1588723493912" duration="675000" />
       <workItem from="1589512711264" duration="308000" />
-      <workItem from="1589513205531" duration="752000" />
+      <workItem from="1589513205531" duration="1010000" />
+      <workItem from="1597723389712" duration="19000" />
     </task>
     <servers />
   </component>
@@ -131,6 +137,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
