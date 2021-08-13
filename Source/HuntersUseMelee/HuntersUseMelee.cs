@@ -27,7 +27,7 @@ namespace HuntersUseMelee
             
             try 
             {
-                var simpleExtensions = AccessTools.TypeByName("SimpleSidearms.Extensions");
+                var simpleExtensions = AccessTools.TypeByName("PeteTimesSix.SimpleSidearms.Extensions");
                 getGuns = simpleExtensions.GetMethod("getCarriedWeapons");
             }
             catch
