@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <HuntersUseMeleeCurrentModVersionLabel>Installed mod-version: {0}</HuntersUseMeleeCurrentModVersionLabel>
+  <HuntersUseMeleeCategoryLabel>Hunters Use Melee!</HuntersUseMeleeCategoryLabel>
+  <HuntersUseMeleeFistFightingLabel>Enable Fist Fighting</HuntersUseMeleeFistFightingLabel>
+  <HuntersUseMeleeFistFightDesc>This setting allows pawns to hunt using their fists, beware that this could beackfire!</HuntersUseMeleeFistFightDesc>
+  <HuntersUseMeleeSimpleSidearmsLabel>Enable Simple Sidearms Support</HuntersUseMeleeSimpleSidearmsLabel>
+  <HuntersUseMeleeSidearmsDesc>Simple Sidearms support allows pawns to consider using their secondary weapons for hunting.</HuntersUseMeleeSidearmsDesc>
+  <HUMHunterLacksWeapon>Hunter lacks weapon</HUMHunterLacksWeapon>
+  <HUMHunterLacksWeaponDesc>A hunter does not have any weapon.\n\nWhile they can still perform their job, it is highly recommended to give them a weapon.</HUMHunterLacksWeaponDesc>
+</LanguageData>
