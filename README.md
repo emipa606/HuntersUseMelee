@@ -50,3 +50,4 @@ Thanks to all the helpful people over at the RimWorld Discord who have helped me
 -  If you have the solution for a problem, please post it to the GitHub repository.
 
 
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2900108163]Last updated 2023-01-04

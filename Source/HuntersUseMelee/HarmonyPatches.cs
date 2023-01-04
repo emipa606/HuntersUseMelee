@@ -15,7 +15,7 @@ internal static class HarmonyPatches
         var harmony = new Harmony("net.netrve.huntersusemelee");
         try
         {
-            var type = AccessTools.TypeByName("SimpleSidearms.Extensions");
+            var type = AccessTools.TypeByName("PeteTimesSix.SimpleSidearms.Extensions");
             getGuns = type.GetMethod("getCarriedWeapons");
         }
         catch
