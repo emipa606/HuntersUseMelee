@@ -4,7 +4,7 @@ using Verse;
 
 namespace HuntersUseMelee;
 
-[HarmonyPatch(typeof(WorkGiver_HunterHunt), "HasHuntingWeapon")]
+[HarmonyPatch(typeof(WorkGiver_HunterHunt), nameof(WorkGiver_HunterHunt.HasHuntingWeapon))]
 internal static class Patch_HasHuntingWeapon
 {
     private static bool Prefix(ref bool __result)
@@ -26,7 +26,8 @@ internal static class Patch_HasHuntingWeapon
         }
 
         __result = p.equipment.Primary != null && p.equipment.Primary.def.IsMeleeWeapon &&
-                   p.equipment.PrimaryEq.PrimaryVerb.HarmsHealth();
+                   p.equipment.PrimaryEq.PrimaryVerb.HarmsHealth() &&
+                   !p.equipment.Primary.def.defName.ToLower().Contains("shield");
         if (__result || !HuntersUseMeleeMod.settings.enableSimpleSidearms ||
             !HuntersUseMeleeMain.SimpleSidearmsLoaded || HarmonyPatches.GetGuns == null)
         {
