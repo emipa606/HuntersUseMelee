@@ -5,11 +5,11 @@ using Verse;
 namespace HuntersUseMelee;
 
 [HarmonyPatch(typeof(WorkGiver_HunterHunt), nameof(WorkGiver_HunterHunt.HasHuntingWeapon))]
-internal static class Patch_HasHuntingWeapon
+internal static class WorkGiver_HunterHunt_HasHuntingWeapon
 {
-    private static bool Prefix(ref bool __result)
+    public static bool Prefix(ref bool __result)
     {
-        if (!HuntersUseMeleeMod.settings.enableFistFighting)
+        if (!HuntersUseMeleeMod.Settings.EnableFistFighting)
         {
             return true;
         }
@@ -18,7 +18,7 @@ internal static class Patch_HasHuntingWeapon
         return false;
     }
 
-    private static void Postfix(Pawn p, ref bool __result)
+    public static void Postfix(Pawn p, ref bool __result)
     {
         if (__result)
         {
@@ -28,7 +28,7 @@ internal static class Patch_HasHuntingWeapon
         __result = p.equipment.Primary != null && p.equipment.Primary.def.IsMeleeWeapon &&
                    p.equipment.PrimaryEq.PrimaryVerb.HarmsHealth() &&
                    !p.equipment.Primary.def.defName.ToLower().Contains("shield");
-        if (__result || !HuntersUseMeleeMod.settings.enableSimpleSidearms ||
+        if (__result || !HuntersUseMeleeMod.Settings.EnableSimpleSidearms ||
             !HuntersUseMeleeMain.SimpleSidearmsLoaded || HarmonyPatches.GetGuns == null)
         {
             return;

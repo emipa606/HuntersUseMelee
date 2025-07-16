@@ -6,13 +6,13 @@ namespace HuntersUseMelee;
 
 internal class HuntersUseMeleeMod : Mod
 {
-    public static HuntersUseMeleeSettings settings;
+    public static HuntersUseMeleeSettings Settings;
     private static string currentVersion;
 
     public HuntersUseMeleeMod(ModContentPack content)
         : base(content)
     {
-        settings = GetSettings<HuntersUseMeleeSettings>();
+        Settings = GetSettings<HuntersUseMeleeSettings>();
         currentVersion = VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
     }
 
@@ -23,28 +23,28 @@ internal class HuntersUseMeleeMod : Mod
 
     public override void DoSettingsWindowContents(Rect inRect)
     {
-        var listing_Standard = new Listing_Standard();
-        listing_Standard.Begin(inRect);
-        listing_Standard.verticalSpacing = 8f;
-        listing_Standard.Label("HuntersUseMeleeFistFightDesc".Translate());
-        listing_Standard.CheckboxLabeled("HuntersUseMeleeFistFightingLabel".Translate() + ": ",
-            ref settings.enableFistFighting);
+        var listingStandard = new Listing_Standard();
+        listingStandard.Begin(inRect);
+        listingStandard.verticalSpacing = 8f;
+        listingStandard.Label("HuntersUseMeleeFistFightDesc".Translate());
+        listingStandard.CheckboxLabeled("HuntersUseMeleeFistFightingLabel".Translate() + ": ",
+            ref Settings.EnableFistFighting);
         if (HuntersUseMeleeMain.SimpleSidearmsLoaded)
         {
-            listing_Standard.Label("HuntersUseMeleeSidearmsDesc".Translate());
-            listing_Standard.CheckboxLabeled("HuntersUseMeleeSimpleSidearmsLabel".Translate() + ": ",
-                ref settings.enableSimpleSidearms);
+            listingStandard.Label("HuntersUseMeleeSidearmsDesc".Translate());
+            listingStandard.CheckboxLabeled("HuntersUseMeleeSimpleSidearmsLabel".Translate() + ": ",
+                ref Settings.EnableSimpleSidearms);
         }
 
         if (currentVersion != null)
         {
-            listing_Standard.Gap();
+            listingStandard.Gap();
             GUI.contentColor = Color.gray;
-            listing_Standard.Label("HuntersUseMeleeCurrentModVersionLabel".Translate(currentVersion));
+            listingStandard.Label("HuntersUseMeleeCurrentModVersionLabel".Translate(currentVersion));
             GUI.contentColor = Color.white;
         }
 
-        listing_Standard.End();
-        settings.Write();
+        listingStandard.End();
+        Settings.Write();
     }
 }

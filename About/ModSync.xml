@@ -2,7 +2,7 @@
 <ModSyncNinjaData>
   <ID>82dc8a33-feea-4a30-865a-eb5c483ff8f1</ID>
   <ModName>Hunters Use Melee! (Continued)</ModName>
-  <Version>1.5.1</Version>
+  <Version>1.6.0</Version>
   <SaveBreaking>False</SaveBreaking>
   <Host name="Github">
     <Owner>emipa606</Owner>
@@ -12,3 +12,4 @@
     <Branch>master</Branch>
   </Host>
 </ModSyncNinjaData>
+

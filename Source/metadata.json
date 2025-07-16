@@ -2,5 +2,16 @@
   "Continued": true,
   "CanAdd": "0",
   "CanRemove": "0",
-  "PreviewVersion": "1.5"
+  "PreviewVersion": "1.6",
+  "Patches": false,
+  "Defs": false,
+  "Assemblies": true,
+  "LinesOfCode": 5725,
+  "LinesOfXML": 0,
+  "CodeBaseSize": 61,
+  "LastXmlCleaning": "2025-07-16T15:45:03.1238103+02:00",
+  "SocialImageSet": true,
+  "SearchTags": [
+    "hunting unrestriction"
+  ]
 }

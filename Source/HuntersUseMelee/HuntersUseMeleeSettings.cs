@@ -4,13 +4,13 @@ namespace HuntersUseMelee;
 
 public class HuntersUseMeleeSettings : ModSettings
 {
-    public bool enableFistFighting;
-    public bool enableSimpleSidearms;
+    public bool EnableFistFighting;
+    public bool EnableSimpleSidearms;
 
     public override void ExposeData()
     {
         base.ExposeData();
-        Scribe_Values.Look(ref enableFistFighting, "HuntersUseMeleeFistFightingLabel");
-        Scribe_Values.Look(ref enableSimpleSidearms, "HuntersUseMeleeSimpleSidearmsLabel");
+        Scribe_Values.Look(ref EnableFistFighting, "HuntersUseMeleeFistFightingLabel");
+        Scribe_Values.Look(ref EnableSimpleSidearms, "HuntersUseMeleeSimpleSidearmsLabel");
     }
 }

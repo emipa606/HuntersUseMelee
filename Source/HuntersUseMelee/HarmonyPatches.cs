@@ -11,7 +11,6 @@ internal static class HarmonyPatches
 
     static HarmonyPatches()
     {
-        var harmony = new Harmony("net.netrve.huntersusemelee");
         try
         {
             var type = AccessTools.TypeByName("PeteTimesSix.SimpleSidearms.Extensions");
@@ -19,9 +18,9 @@ internal static class HarmonyPatches
         }
         catch
         {
-            Log.Message("[HuM] Could not find Simple Sidearms, support disabled.");
+            // ignored
         }
 
-        harmony.PatchAll();
+        new Harmony("net.netrve.huntersusemelee").PatchAll(Assembly.GetExecutingAssembly());
     }
 }
